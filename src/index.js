@@ -1,3 +1,6 @@
+// It loads environment variables using dotenv,
+//connects to the database, and starts the Express server.
+
 //require("dotenv").config({ path: "./env" });
 import dotenv from "dotenv";
 
@@ -8,12 +11,14 @@ dotenv.config({
 });
 
 connectDB()
+  // set up event listeners
   .then(() => {
     app.on("error", (error) => {
       console.log("ERROR !!!    ", error);
       throw error;
     });
 
+    // listen incomming request on express server
     app.listen(process.env.PORT || 8000, () => {
       console.log(`server is running at port : ${process.env.PORT}`);
     });
