@@ -1,5 +1,7 @@
 // It loads environment variables using dotenv,
 //connects to the database, and starts the Express server.
+import express from "express";
+const app = express();
 
 //require("dotenv").config({ path: "./env" });
 import dotenv from "dotenv";
@@ -26,9 +28,6 @@ connectDB()
   .catch((err) => {
     console.log("MONGO db connection failed", err);
   });
-
-// import express from "express";
-// const app = express();
 
 // (async () => {
 //   try {
