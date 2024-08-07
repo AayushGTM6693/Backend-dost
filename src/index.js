@@ -1,8 +1,6 @@
 // It loads environment variables using dotenv,
-//connects to the database, and starts the Express server.
-import express from "express";
-const app = express();
-
+//connects to the database, and import the Express server.
+import { app } from "./app.js";
 //require("dotenv").config({ path: "./env" });
 import dotenv from "dotenv";
 
