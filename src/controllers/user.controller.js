@@ -159,8 +159,8 @@ const logoutUser = asyncHandler(async (req, res) => {
     {
       // db bata refreshToken lai undefined gariyo + frontend ma cookie bata pani clear
       // gariyo
-      $set: {
-        refreshToken: undefined,
+      $unset: {
+        refreshToken: 1,
       },
     },
     {
